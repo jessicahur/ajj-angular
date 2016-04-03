@@ -1,0 +1,16 @@
+{
+  "name": "ajj-angular",
+  "version": "1.0.0",
+  "description": "A gas price web application in Angular",
+  "main": "entry.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "trip",
+    "gas",
+    "price"
+  ],
+  "author": "Jessica Hur",
+  "license": "MIT"
+}

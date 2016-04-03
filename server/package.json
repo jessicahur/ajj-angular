@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server side for trip generator",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "trip",
+    "generator",
+    "gas",
+    "price",
+    "fuel",
+    "trip"
+  ],
+  "author": "Jessica Hur",
+  "license": "MIT"
+}
