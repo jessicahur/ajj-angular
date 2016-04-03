@@ -4,6 +4,7 @@ const restify = require('express-restify-mongoose');
 const User = require('../models/User.js');
 const ShoppingList = require('../models/ShoppingList.js');
 const Trip = require('../models/Trip.js');
+const Vehicle = require('../models/Vehicle.js');
 
 //Other middlewares
 const express = require('express');
@@ -21,6 +22,7 @@ const userAuthRouter = require('./user-router');
 const userRouter = express.Router();
 const shoppingRouter = express.Router();
 const tripRouter = express.Router();
+const vehicleRouter = express.Router();
 
 //Setup for debug and public serving
 app.use(logger('dev'));
@@ -43,12 +45,14 @@ app.use((req, res, next) => {
 restify.serve(userRouter, User, {name: 'users'});
 restify.serve(shoppingRouter, ShoppingList, {name: 'shopping_list'});
 restify.serve(tripRouter, Trip, {name: 'trips'});
+restify.serve(vehicleRouter, Vehicle, {name: 'vehicle'});
 
 //Setup routers. Will add auth once all routes run well
 app.use('/auth', userAuthRouter);
 app.use(userRouter);
 app.use(shoppingRouter);
 app.use(tripRouter);
+app.user(vehicleRouter);
 app.use(function(req, res, next) {
   res.status(404).send('404, no page found: ' + req.url);
 });
