@@ -12,5 +12,8 @@
     "price"
   ],
   "author": "Jessica Hur",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "satellizer": "^0.14.0"
+  }
 }
