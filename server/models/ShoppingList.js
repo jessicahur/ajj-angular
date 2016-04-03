@@ -6,7 +6,7 @@ const ShoppingList = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
-  items: [type: String]
+  items: [String]
 });
 
 module.exports = mongoose.model( 'ShoppingList', ShoppingList );
