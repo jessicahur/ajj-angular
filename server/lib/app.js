@@ -1,10 +1,10 @@
 //MongoDB - Mongoose
 const mongoose = require('mongoose');
 const restify = require('express-restify-mongoose');
-// const User = require('../models/User.js');
-const ShoppingList = require('../models/ShoppingList.js');
-const Trip = require('../models/Trip.js');
-const Vehicle = require('../models/Vehicle.js');
+const User = require('../models/User');
+const ShoppingList = require('../models/ShoppingList');
+const Trip = require('../models/Trip');
+const Vehicle = require('../models/Vehicle');
 
 //Other middlewares
 const express = require('express');
@@ -19,7 +19,7 @@ const jwt = require('jwt-simple');
 //App and routers
 const app = express();
 const userAuthRouter = require('./user-router');
-// const userRouter = express.Router();
+const userRouter = express.Router();
 const shoppingRouter = express.Router();
 const tripRouter = express.Router();
 const vehicleRouter = express.Router();
@@ -42,14 +42,14 @@ app.use((req, res, next) => {
 });
 
 //Setup router for express-restify-mongoose
-// restify.serve(userRouter, User, {name: 'users'});
+restify.serve(userRouter, User, {name: 'users'});
 restify.serve(shoppingRouter, ShoppingList, {name: 'shopping_list'});
 restify.serve(tripRouter, Trip, {name: 'trips'});
 restify.serve(vehicleRouter, Vehicle, {name: 'vehicle'});
 
 //Setup routers. Will add auth once all routes run well
+app.use(userRouter);
 app.use('/auth', userAuthRouter);
-// app.use(userRouter);
 app.use(shoppingRouter);
 app.use(tripRouter);
 app.use(vehicleRouter);
