@@ -48,8 +48,8 @@ restify.serve(tripRouter, Trip, {name: 'trips'});
 restify.serve(vehicleRouter, Vehicle, {name: 'vehicle'});
 
 //Setup routers. Will add auth once all routes run well
-app.use(userRouter);
 app.use('/auth', userAuthRouter);
+app.use(userRouter);
 app.use(shoppingRouter);
 app.use(tripRouter);
 app.use(vehicleRouter);
