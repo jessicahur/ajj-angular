@@ -1,5 +1,5 @@
-import SigninCtrl from './SigninCtrl';
-import passData from './pass-data';
+// import SigninCtrl from './SigninCtrl';
+// import passData from './pass-data';
 
 export default function(angularModule) {
     angularModule.config(function($urlRouterProvider, $stateProvider) {
@@ -12,7 +12,7 @@ export default function(angularModule) {
             .state('signin', {
                 url: '/signin',
                 template: '<signin></signin>',
-                controller: SigninCtrl
+                // controller: SigninCtrl
             })
             .state('account', {
                 url: '/account',
@@ -20,7 +20,7 @@ export default function(angularModule) {
                 data: {
                     requireAuth: true
                 },
-                controller: AccountCtrl
+                // controller: AccountCtrl
             })
             .state('account.trip', {
                 url: '/trips/:tripid',
@@ -33,7 +33,7 @@ export default function(angularModule) {
             .state('random_trip', {
                 url: '/random_trip',
                 template: '<random-trip></random-trip>',
-                controller: FeedDetailCtrl
+                // controller:
             });
     });
 }

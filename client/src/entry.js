@@ -1,4 +1,5 @@
 import angular      from 'angular';
+import angularRouter from 'angular-ui-router';
 import components   from './components';
 import routeConfig from './js/route-config';
 import AppCtrl      from './js/AppCtrl';
@@ -16,10 +17,10 @@ import AppCtrl      from './js/AppCtrl';
  * App Setup:
  */
 
-const app = angular.module('myApp', []);
+const app = angular.module('myApp', [angularRouter]);
 
 app.constant( 'baseUrl', BASE_URL)
-   .controller('AppController', AppCtrl)
+   .controller('AppController', AppCtrl);
 
 components(app);
 routeConfig(app);

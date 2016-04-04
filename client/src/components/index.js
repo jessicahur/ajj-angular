@@ -1,11 +1,7 @@
-import appDr from './app/app';
+import appDr from './app/app.js';
 
-
-/**
- * Bundle components in this dir. so that app can be passed to each.
- */
 export default function(angularModule) {
-  //Nav Directives
+
   appDr(angularModule);
 
-};
+}

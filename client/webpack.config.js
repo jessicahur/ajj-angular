@@ -1,4 +1,5 @@
 const HtmlWebpackPlugin = require( 'html-webpack-plugin' );
+const DefinePlugin = require('webpack').DefinePlugin;
 const path = require( 'path' );
 const entry = './src/entry.js';
 
