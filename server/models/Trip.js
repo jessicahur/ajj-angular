@@ -6,6 +6,7 @@ const Trip = new Schema({
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
+  name: String,
   origin: String,
   midpoints: [String],
   destination: String

@@ -5,6 +5,10 @@ export default function(angularModule) {
     angularModule.config(function($urlRouterProvider, $stateProvider) {
         $urlRouterProvider.otherwise("/");
         $stateProvider
+            .state('home', {
+                url:'/',
+                template: '<home></home>'
+            })
             .state('signin', {
                 url: '/signin',
                 template: '<signin></signin>',
@@ -29,9 +33,6 @@ export default function(angularModule) {
             .state('random_trip', {
                 url: '/random_trip',
                 template: '<random-trip></random-trip>',
-                data: {
-                    requireAuth: false
-                },
                 controller: FeedDetailCtrl
             });
     });

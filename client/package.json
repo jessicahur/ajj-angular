@@ -4,7 +4,9 @@
   "description": "A gas price web application in Angular",
   "main": "entry.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "eval $(cat .env) webpack-dev-server --inline",
+    "build": "eval $(cat .env) webpack"
   },
   "keywords": [
     "trip",
@@ -14,6 +16,23 @@
   "author": "Jessica Hur",
   "license": "MIT",
   "dependencies": {
-    "satellizer": "^0.14.0"
+    "angular": "^1.5.3",
+    "angular-resource": "^1.5.3",
+    "angular-ui-bootstrap": "^1.2.5",
+    "babel-core": "^6.7.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "html-webpack-plugin": "^2.15.0",
+    "jshint": "^2.9.1",
+    "jshint-loader": "^0.8.3",
+    "node-sass": "^3.4.2",
+    "resolve-url-loader": "^1.4.3",
+    "sass-loader": "^3.2.0",
+    "satellizer": "^0.14.0",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1"
   }
 }
