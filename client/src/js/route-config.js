@@ -3,10 +3,10 @@
 
 export default function(angularModule) {
     angularModule.config(function($urlRouterProvider, $stateProvider) {
-        $urlRouterProvider.otherwise("/");
+        $urlRouterProvider.otherwise("/home");
         $stateProvider
             .state('home', {
-                url:'/',
+                url:'/home',
                 template: '<home></home>'
             })
             .state('signin', {
