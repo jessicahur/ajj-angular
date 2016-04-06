@@ -57,6 +57,7 @@ export default function(AngularModule) {
                .then(res => {
                   if (res.data.menuItem.length){
                     $scope.engines = res.data.menuItem;
+                    console.log(res.data);
                   } else {
                     $scope.engines.push(res.data.menuItem);
                   }
@@ -64,6 +65,25 @@ export default function(AngularModule) {
                .catch(err => {
                 console.log(err);
                });
+        };
+
+        //Http call for specific car mileage
+        $scope.fetchMileage = function() {
+          var engine = $scope.engines.filter(engine => { return engine.text === $scope.carEngine; });
+          if ($scope.carYear.length !== 0 && $scope.carMake.length !== 0 && $scope.carModel.length !== 0 && $scope.carEngine.length !== 0) {
+            $http.get(`https://www.fueleconomy.gov/ws/rest/ympg/shared/ympgVehicle/${engine[0].value}`)
+                 .then(res => {
+                    if (res.status === 204) {
+                      $scope.message = 'Sorry, we cannot find the mileage for your car';
+                    } else {
+                      $scope.message = '';
+                      $scope.avgMpg = Math.floor(res.data.avgMpg*100)/100;
+                    }
+                  })
+                 .catch(err => {
+                  console.log(err);
+                 });
+          }
         };
       }
     };

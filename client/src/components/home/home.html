@@ -17,10 +17,11 @@
         <select ng-model="carEngine" ng-change=fetchMileage()>
             <option ng-repeat="engine in engines">{{engine.text}}</option>
         </select>
-        <h2 class="errorVehicle redOrangeText"></h2>
+        <div>Average mileage: {{avgMpg}}</div>
+        <div>{{message}}</div>
     </form>
 
-    <form return false>
+    <form ng-show="avgMpg">
         <label>Start:</label>
             <input type="text" >
         <label>Midpoint:</label>
