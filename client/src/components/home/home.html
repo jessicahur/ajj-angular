@@ -1,0 +1,37 @@
+<div>
+    <form>
+        <h2>Please select your car specs:</h2>
+        <label>Year:</label>
+        <select ng-model="carYear" ng-change=fetchMake()>
+            <option ng-repeat="year in years">{{year}}</option>
+        </select>
+        <label>Make:</label>
+        <select ng-model="carMake" ng-change=fetchModel()>
+            <option ng-repeat="make in makes">{{make.text}}</option>
+        </select>
+        <label>Model:</label>
+        <select ng-model="carModel" ng-change=fetchEngine()>
+            <option ng-repeat="model in models">{{model.text}}</option>
+        </select>
+        <label>Engine:</label>
+        <select ng-model="carEngine" ng-change=fetchMileage()>
+            <option ng-repeat="engine in engines">{{engine.text}}</option>
+        </select>
+        <h2 class="errorVehicle redOrangeText"></h2>
+    </form>
+
+    <form return false>
+        <label>Start:</label>
+            <input type="text" >
+        <label>Midpoint:</label>
+            <input type="text" >
+            <button ng-click="">Add</button>
+            <select size="4" name="midPoints" multiple="multiple"></select>
+            <button ng-click="">Clear mid points</button>
+        <label>Destination:</label>
+            <input type="text" >
+            <input type="checkbox" name="avoidHighways">Avoid Freeway</input>
+            <input type="checkbox" name="avoidTolls">Avoid Toll</input>
+            <button ng-click="submit">Submit</button>
+    </form>
+</div>
