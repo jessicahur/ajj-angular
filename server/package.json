@@ -19,7 +19,7 @@
     "fuel",
     "trip"
   ],
-  "author": "Jessica Hur",
+  "author": "Jessica Hur, Alex Anderson, Jake Herold",
   "license": "MIT",
   "dependencies": {
     "bcrypt": "^0.8.5",

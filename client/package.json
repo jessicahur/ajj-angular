@@ -13,7 +13,7 @@
     "gas",
     "price"
   ],
-  "author": "Jessica Hur",
+  "authors": "Jessica Hur, Alex Anderson, Jake Herold",
   "license": "MIT",
   "dependencies": {
     "angular": "^1.5.3",
@@ -35,5 +35,9 @@
     "url-loader": "^0.5.7",
     "webpack": "^1.12.14",
     "webpack-dev-server": "^1.14.1"
+  },
+  "devDependencies": {
+    "npm-install-webpack-plugin": "^3.0.0",
+    "webpack-merge": "^0.8.4"
   }
 }
