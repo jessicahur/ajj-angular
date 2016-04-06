@@ -20,12 +20,9 @@ const common = {
   // latter form given it's convenient with more complex configurations.
   entry,
   plugins: [
-      new HtmlWebpackPlugin({
-        template: './src/index.html'
-      }),
-      new DefinePlugin({
-        BASE_URL: JSON.stringify(process.env.BASE_URL_DEV || '')
-      })
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
   ],
   output: {
     path: PATHS.build,
@@ -102,12 +99,21 @@ if(TARGET === 'start' || !TARGET) {
       new webpack.HotModuleReplacementPlugin(),
       new NpmInstallPlugin({
         save: true // --save
+      }),
+      new DefinePlugin({
+        BASE_URL: JSON.stringify(process.env.BASE_URL_DEV || '')
       })
     ]
   });
 }
 
 if(TARGET === 'build') {
-  module.exports = merge(common, {});
+  module.exports = merge(common, {
+    plugins: [
+      new DefinePlugin({
+        BASE_URL: JSON.stringify(process.env.BASE_URL_PRO || '')
+      })
+    ]
+  });
 }
 
